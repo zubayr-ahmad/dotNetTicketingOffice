@@ -1,0 +1,88 @@
+.mainheading {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #007bff;
+}
+
+.inputfields {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+#signinbutton {
+  width: 20%;
+  /* box-sizing: border-box; */
+  text-align: center;
+}
+
+.login-form {
+  max-width: 450px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.invalid-feedback {
+  color: red;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 5px;
+  background-color: #007bff;
+  border: none;
+}
+/* Show password feature styling */
+.form-control[type="password"] {
+    padding-right: 40px;
+  }
+  
+  .input-group-append button {
+    z-index: 1;
+  }
+  
+  .input-group-append i {
+    position: relative;
+    z-index: 2;
+  }
+
+.invalidUser{
+  color:red;
+  font-size: small;
+}
+@media screen and (max-width: 768px) {
+  .login-form {
+    padding: 15px;
+  }
+}
