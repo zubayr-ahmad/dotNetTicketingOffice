@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
 export class MaintableService {
 
   constructor(private http:HttpClient) { }
-  getTicketsURL = 'http://localhost:3000/api/tickets'
+  // getTicketsURL = 'http://localhost:3000/api/tickets'
+  // getTicketsURL ='https://localhost:7274/RetrievingDataFromTicketTable'
+  getTicketsURL ='http://localhost:8083/LatestAPI/RetrievingDataFromTicketTable'
   getTickets(){
     return this.http.get(this.getTicketsURL)
   }

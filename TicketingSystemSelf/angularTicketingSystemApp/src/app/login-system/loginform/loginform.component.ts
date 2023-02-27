@@ -65,19 +65,21 @@ export class LoginformComponent implements OnInit{
   postData(form:any){
     // Making object that is posted to backend
     let data = {
-      email: this.loginForm.get('email')?.value,
-      password: this.loginForm.get('password')?.value,
+      Email: this.loginForm.get('email')?.value,
+      Password: this.loginForm.get('password')?.value,
     };
 
-    console.log(data)
+    // console.log(data)
     
     // Comment it out for real APIs
     // this._loginservice.postUserData(data).subscribe((response)=>{
     //   this.setVarification(response),
     //   this.router.navigate(['/mainTable'])})
     // For testing
-    let a = this._loginservice.postUserData(data)
-    if (a){
+    // let a:any;
+    // this._loginservice.postUserData(data).subscribe(response => a = response)
+    let a:any = this._loginservice.postUserData(data)
+    if (a == true){
     this.router.navigate(['/mainTable'])
     }
     else{

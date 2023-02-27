@@ -3915,11 +3915,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.Net\\Ceadar\\Projects\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
+      "projectUniqueName": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
       "projectName": "TicketingSystemSelf",
-      "projectPath": "E:\\.Net\\Ceadar\\Projects\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
+      "projectPath": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\.Net\\Ceadar\\Projects\\TicketingSystemSelf\\TicketingSystemSelf\\obj\\",
+      "outputPath": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3986,7 +3986,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

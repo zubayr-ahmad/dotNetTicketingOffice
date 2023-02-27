@@ -1,13 +1,14 @@
-<div class="table-container" #tableContainer>
+
+ <div class="table-container" #tableContainer>
   
   <cdk-virtual-scroll-viewport itemSize="10" class="table-container" >
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Title</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Requester ID</th>
+        <th scope="col">Assigee ID</th>
         <th scope="col">Status</th>
-        <th scope="col">Assigee</th>
-        <th scope="col">Subject Matter</th>
         <th scope="col">Priority</th>
         <th scope="col">Start Date</th>
         <th scope="col">Due Date</th>
@@ -19,22 +20,23 @@
     <tbody #tableBody>
       <ng-container *cdkVirtualFor="let tkt of allTickets; let i = index">
         <tr (click)="toggleRow(i)">
-          <td>{{tkt.title}}</td>
+          <td>{{tkt.ticketSubject}}</td>
+          <td>{{tkt.requesterId}}</td>
+          <td>{{tkt.assignyId}}</td>
           <td [ngClass]="{
             'complete': tkt.status === 1,
             'pending': tkt.status === 2,
             'in-progress': tkt.status === 3
           }">{{tkt.status === 1 ? 'Complete' : tkt.status === 2 ? 'Pending' : 'In Progress'}}</td>
-          <td>{{tkt.assigneeId}}</td>
-          <td>{{tkt.subjectMatter}}</td>
+
           <td [ngClass]="{
             'low': tkt.priority === 1,
             'normal': tkt.priority === 2,
             'high': tkt.priority === 3
           }">{{tkt.priority === 1 ? 'Low' : tkt.priority === 2 ? 'Normal' : 'High'}}</td>
-          <td>{{tkt.startDat}}</td>
-          <td>{{tkt.dueDate}}</td>
-          <td>{{tkt.updatedDate}}</td>
+          <td>{{tkt.dateCreated | date}}</td>
+          <td>{{tkt.dueDate | date}}</td>
+          <td>{{tkt.updatedDate | date}}</td>
           <td>{{tkt.taskId}}</td>
           <td><button id="buttonColor" mat-raised-button type="button" class="btn " >{{ isRowExpanded(i) ? 'Hide' : 'Show More' }}</button></td>
           
@@ -50,7 +52,7 @@
     </tbody>
   </table>
 </cdk-virtual-scroll-viewport>
-</div>
+</div> 
 
 
 

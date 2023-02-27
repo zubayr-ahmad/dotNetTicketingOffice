@@ -14,7 +14,8 @@ export class MainTableComponent {
   showMore: boolean = false;
   constructor(private _maintableservice: MaintableService) {
     this._maintableservice.getTickets().subscribe((response: any) => {
-      this.allTickets = response.tickets;
+      // this.allTickets = response.tickets;
+      this.allTickets = response;
       console.log(response)
     });
   }
