@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<!--Link for adding icons-->
+
+
+<h1 class="mainheading">Welcome to Ticketing System</h1>
+
+<!-- Login Form -->
+<form [formGroup]="loginForm" (ngSubmit)="[postData(loginForm)]" class="login-form mt-3">
+
+  <!-- Input Email -->
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input formControlName="email" type="email" id="email" class="form-control" placeholder="Enter email" />
+
+    <!-- Email Validations -->
+    <div *ngIf="
+        loginForm.get('email')?.invalid &&
+        (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)
+      " class="alert alert-danger mt-2">
+      <small *ngIf="loginForm.get('email')?.hasError('required')">Email is required.</small>
+      <small *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format.</small>
+    </div>
+  </div>
+
+
+  <!-- Input Password -->
+  <div class="form-group">
+    <div class="input-group mb-3">
+      <label for="email">Password</label>
+      <input type="{{ passwordFieldType }}" formControlName="password" class="form-control" placeholder="Password" />
+
+      <!-- Password Show Feature -->
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
+          <i class="fa" [ngClass]="passwordFieldType === 'password' ? 'fa-eye' : 'fa-eye-slash'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Password Validation -->
+    <div *ngIf="
+        loginForm.get('password')?.invalid &&
+        (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)
+      " class="alert alert-danger mt-2">
+      <div *ngIf="loginForm.get('password')?.hasError('required')">
+        Password is required
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Login Button -->
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="loginForm.invalid">
+    Login
+  </button>
+  
+  
+  <!-- Invalid Username or Password -->
+  <div *ngIf="getVarification()==false">
+    <p class="invalidUser">Invalid Username or Password</p>
+  </div>
+
+
+</form>
+
+
+<!-- For testing -->
+<!-- <button (click)="getResponse()">getResponse</button>
+<p>{{storedResponse}}</p> -->
+<!-- <p>{{responseFromBackend}}</p> -->
+

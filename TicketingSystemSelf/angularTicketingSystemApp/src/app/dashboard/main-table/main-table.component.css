@@ -1,0 +1,83 @@
+
+table {
+  margin-right: 0%;
+  width: 100%;
+}
+.table-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+.displaytable {
+  height: 100vh;
+  width: 99vw;
+}
+
+
+th {
+  background-color: rgb(3, 101, 112);
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d9dbdb;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+
+}
+
+tr:hover{
+  background-color: rgb(180, 206, 214);
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#buttonColor{
+  background-color: rgb(8, 149, 200);
+  color: #fff;
+}
+
+/* For status styling */
+.complete {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: rgb(255, 140, 0);
+  font-weight: bold;
+}
+
+.in-progress {
+  color: blue;
+  font-weight: bold;
+}
+
+/* For priority styling */
+.low {
+  color: rgb(13, 57, 110);
+  font-weight: bold;
+}
+
+.normal {
+  color: green;
+  font-weight: bold;
+}
+
+.high {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+
+/* Extra */

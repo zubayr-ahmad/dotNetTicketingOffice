@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\.Net\Deploying Project\dotNetTicketingOffice\TicketingSystemSelf\TicketingSystemSelf\bin\Release\net7.0\publish\</_PublishTargetUrl>
+    <History>True|2023-02-27T22:20:14.8051241Z;True|2023-02-28T02:31:33.8876018+05:00;True|2023-02-28T00:53:16.4223540+05:00;True|2023-02-27T23:53:19.6641189+05:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
