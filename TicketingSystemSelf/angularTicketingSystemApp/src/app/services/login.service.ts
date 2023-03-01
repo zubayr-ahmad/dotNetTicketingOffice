@@ -22,13 +22,7 @@ export class LoginService {
     
   // }
   postUserData(userData: any) {
-    return this.http.post(this.postloginURL, userData).subscribe(response => {
-      this.check = response;
-      let a = this.check;
-      console.log(a);
-      this.check = false;
-      return a;
-    });
+    return this.http.post(this.postloginURL, userData);
   }
 
   //testing function

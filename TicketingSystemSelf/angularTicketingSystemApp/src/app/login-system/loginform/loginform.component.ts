@@ -78,13 +78,14 @@ export class LoginformComponent implements OnInit{
     // For testing
     // let a:any;
     // this._loginservice.postUserData(data).subscribe(response => a = response)
-    let a:any = this._loginservice.postUserData(data)
-    if (a == true){
-    this.router.navigate(['/mainTable'])
-    }
-    else{
-      this.storedResponse = false
-    }
+    this._loginservice.postUserData(data).subscribe((response) => {
+      if (response) {
+        this.storedResponse = true;
+        this.router.navigate(['/mainTable']);
+      } else {
+        this.storedResponse = false;
+      }
+    });
     
     
     // Poting data and getting respose
