@@ -14,21 +14,11 @@ export class LoginService {
   postloginURL = 'http://localhost:8083/LatestAPI/LogIn_API'
   check:any =false;
 
-  // This will send user information to the backend
-  // postUserData(userData:any){
 
-  //   this.http.post(this.postloginURL,userData).subscribe(response=>{this.check=response})
-
-    
   // }
   postUserData(userData: any) {
     return this.http.post(this.postloginURL, userData);
   }
-
-  //testing function
-  // postUserData(data:any){
-    // return true
-  // }
 
   // This will get varification of user login from backend.
   isVarified(){
