@@ -3910,26 +3910,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\Zubair\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
+      "projectUniqueName": "F:\\Programming\\Internship\\Ticketing System\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
       "projectName": "TicketingSystemSelf",
-      "projectPath": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\.Net\\Deploying Project\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\obj\\",
+      "projectPath": "F:\\Programming\\Internship\\Ticketing System\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\TicketingSystemSelf.csproj",
+      "packagesPath": "C:\\Users\\Zubair\\.nuget\\packages\\",
+      "outputPath": "F:\\Programming\\Internship\\Ticketing System\\dotNetTicketingOffice\\TicketingSystemSelf\\TicketingSystemSelf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Zubair\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3986,7 +3984,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
