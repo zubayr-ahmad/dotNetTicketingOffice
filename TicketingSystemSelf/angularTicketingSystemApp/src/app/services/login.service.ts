@@ -5,17 +5,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  constructor(private http:HttpClient) { }
-
-  // varificationURL = 'https://reqres.in/api/users?page=2'
+  constructor(private http:HttpClient) { } 
   varificationURL = 'https://localhost:7274/LogIn_API?Email=ghulamshabbir7999%40gmail.com&Password=112215'
-  // varificationURL = 'https://api.jikan.moe/v4/anime/{id}/full'
+  
 
   postloginURL = 'http://localhost:8083/LatestAPI/LogIn_API'
   check:any =false;
 
 
-  // }
+  // This will only send data to backend and backend will return the response true or false based on 
   postUserData(userData: any) {
     return this.http.post(this.postloginURL, userData);
   }

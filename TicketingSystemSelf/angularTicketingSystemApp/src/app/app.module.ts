@@ -9,7 +9,6 @@ import { LoginSystemModule } from './login-system/login-system.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 
-import { Transition01Component } from './transition01/transition01.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -19,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    Transition01Component
+    
   ],
   imports: [
     BrowserModule,

@@ -5,14 +5,15 @@ import string
 
 def addTicket(title1, status1, assigneeId1, subjectMatter1, priority1,
               startDate1, dueDate1, updatedDate1, taskId1, description1,
-              comment1, sentiment1):
+              comment1, sentiment1,requesterId1):
     obj = {
-        "title": title1,
+        "ticketSubject":title1,
+        "requesterId":requesterId1,
         "status": status1,
-        "assigneeId": assigneeId1,
+        "assignyId": assigneeId1,
         "subjectMatter": subjectMatter1,
         "priority": priority1,
-        "startDat": startDate1,
+        "dateCreated": startDate1,
         "dueDate": dueDate1,
         "updatedDate": updatedDate1,
         "taskId": taskId1,
@@ -135,6 +136,7 @@ def createData():
         priorityList = [1, 1 , 1, 1, 2, 2, 3]
         priority = random.choice(priorityList)
         assigneeId = i + 1
+        requesterId = i + 157
         subjectMatter = ''.join(random.choice(characters) for i in range(15))
         title = random.choice(titleList)
         description = random.choice(descriptionList)
@@ -143,7 +145,7 @@ def createData():
 
         x = addTicket(title, status, assigneeId, subjectMatter, priority,
                       startDate, dueDate, updatedDate, taskId, description,
-                      comment, sentiment)
+                      comment, sentiment,requesterId)
         allTickets.append(x)
     print(allTickets)
     return allTickets
@@ -152,11 +154,10 @@ def createData():
 def main():
     data = createData()
     with open('storedTickets.txt', 'w+') as f:
-        f.write(r'{"tickets":')
         y = (str(data))
         y = y.replace("'", "\"")
         f.write(y)
-        f.write(r'}')
+
 
 
 main()
