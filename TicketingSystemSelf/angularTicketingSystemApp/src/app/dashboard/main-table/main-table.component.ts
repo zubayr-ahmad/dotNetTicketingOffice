@@ -15,10 +15,10 @@ export class MainTableComponent {
 
   constructor(private _maintableservice: MaintableService) {
     this._maintableservice.getTickets().subscribe((response: any) => {
-      // this.allTickets = response;
+      this.allTickets = response;
 
       // Following Code is for testing pagination
-      this.allTickets = response.results;
+      // this.allTickets = response.results;
       // console.log(response)
     });
   }
