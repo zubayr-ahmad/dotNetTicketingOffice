@@ -18,52 +18,52 @@ namespace TicketingSystemSelf.Controllers
         }
 
 
-
-        // [HttpGet("RetrievingDataFromTicketTable")]
-        // // public async Task<ActionResult<Std>> GetResult() // if we use this statement we will also see the model of the database in swagger
-        // public async Task<IActionResult> GetResult() //Iaction means we are performing some action and returning some status code
-        // {
-        //     return Ok(await _context.Tickets.ToListAsync());
-        //     // return Task.CompletedTask(); //
-        // }
-
-
-
-
-        [HttpPost("RetrievingDataFromTicketTable/{id}")]
-        // [Route("{page}")]
+        // Simple code for data retrieval
+        [HttpGet("RetrievingDataFromTicketTable")]
         // public async Task<ActionResult<Std>> GetResult() // if we use this statement we will also see the model of the database in swagger
-        public async Task<IActionResult> GetResult(int page) //Iaction means we are performing some action and returning some status code
+        public async Task<IActionResult> GetResult() //Iaction means we are performing some action and returning some status code
         {
-            if (_context.Tickets == null)
-                return NotFound();  // will return not found if item is not present
-
-            var pageResult = 10f; // no of items you want to show on one page 
-            var pageCount = Math.Ceiling(_context.Tickets.Count() / pageResult); //total pages divided by pageResult to calculate pages
-            var tickets = await _context.Tickets
-                .Skip((page - 1) * (int)pageResult)  // this will skip specific no of pages (if user want to see page no 6 it will skip 5 pages) 
-                .Take((int)pageResult)  // will take  remaining entries present in pages 
-                .ToListAsync();
-
-            var response = new TicketResponse
-            {
-                Tickets = tickets,
-                CurrentPage = page,
-                Pages = (int)pageCount
-            };
-            return Ok(response);
-            //return Ok(await _context.Tickets.ToListAsync());
+            return Ok(await _context.Tickets.ToListAsync());
             // return Task.CompletedTask(); //
         }
 
 
 
+        // Code for pagination
+        // [HttpPost("RetrievingDataFromTicketTable")]
+        // // [Route("{page}")]
+        // // public async Task<ActionResult<Std>> GetResult() // if we use this statement we will also see the model of the database in swagger
+        // public async Task<IActionResult> GetResult(int page) //Iaction means we are performing some action and returning some status code
+        // {
+        //     if (_context.Tickets == null)
+        //         return NotFound();  // will return not found if item is not present
 
-        //[HttpGet("Retrieving data from Ticket Table")]
-        //public ActionResult<IEnumerable<Ticket>> Get()
-        //{
+        //     var pageResult = 10f; // no of items you want to show on one page 
+        //     var pageCount = Math.Ceiling(_context.Tickets.Count() / pageResult); //total pages divided by pageResult to calculate pages
+        //     var tickets = await _context.Tickets
+        //         .Skip((page - 1) * (int)pageResult)  // this will skip specific no of pages (if user want to see page no 6 it will skip 5 pages) 
+        //         .Take((int)pageResult)  // will take  remaining entries present in pages 
+        //         .ToListAsync();
+
+        //     var response = new TicketResponse
+        //     {
+        //         Tickets = tickets,
+        //         CurrentPage = page,
+        //         Pages = (int)pageCount
+        //     };
+        //     return Ok(response);
+        //     //return Ok(await _context.Tickets.ToListAsync());
+        //     // return Task.CompletedTask(); //
+        // }
+
+
+
+        
+        // [HttpGet("Retrieving data from Ticket Table")]
+        // public ActionResult<IEnumerable<Ticket>> Get()
+        // {
         //    return _context.Tickets.ToList();  // returning tickets list 
-        //}
+        // }
 
 
 

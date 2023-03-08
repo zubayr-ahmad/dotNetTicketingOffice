@@ -12,10 +12,15 @@ import { MaintableService } from 'src/app/services/dashboard/maintable.service';
 export class MainTableComponent {
   allTickets: any; // This will have an obj {} where obj is a list containing all tickets
   showMore: boolean = false; // Button to show more options
+  totalRecords: Number | undefined | any; 
+  page:Number | any = 1;
+
 
   constructor(private _maintableservice: MaintableService) {
     this._maintableservice.getTickets().subscribe((response: any) => {
       this.allTickets = response;
+      this.totalRecords = this.allTickets.length
+
 
       // Following Code is for testing pagination
       // this.allTickets = response.results;

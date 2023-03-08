@@ -1,6 +1,66 @@
-
-
 <div class="table-container" #tableContainer>
+ 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="subject">Subject</th>
+        <th scope="col">Requester ID</th>
+        <th scope="col">Assigee ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Updated Date</th>
+        <th scope="col">Task Id</th>
+        <th scope="col">More</th>
+      </tr>
+    </thead>
+    <tbody #tableBody>
+      <ng-container *ngFor="let tkt of allTickets | paginate: { id: 'listing-pagination', itemsPerPage: 12, currentPage: page, totalItems: totalRecords }; let i = index ">
+          <tr (click)="toggleRow(i)">
+          <td id="subjectRow">{{tkt.ticketSubject}}</td>
+          <td>{{tkt.requesterId}}</td>
+          <td>{{tkt.assignyId}}</td>
+          <td [ngClass]="{
+            'complete': tkt.status === 1,
+            'pending': tkt.status === 2,
+            'in-progress': tkt.status === 3
+          }">{{tkt.status === 1 ? 'Complete' : tkt.status === 2 ? 'Pending' : 'In Progress'}}</td>
+
+          <td [ngClass]="{
+            'low': tkt.priority === 1,
+            'normal': tkt.priority === 2,
+            'high': tkt.priority === 3
+          }">{{tkt.priority === 1 ? 'Low' : tkt.priority === 2 ? 'Normal' : 'High'}}</td>
+          <td>{{tkt.dateCreated | date}}</td>
+          <td>{{tkt.dueDate | date}}</td>
+          <td>{{tkt.updatedDate | date}}</td>
+          <td>{{tkt.taskId}}</td>
+          <td><button id="buttonColor" mat-raised-button type="button" class="btn " >{{ isRowExpanded(i) ? 'Hide' : 'More' }}</button></td>
+          
+        </tr>
+        <tr id='moreRow' *ngIf="isRowExpanded(i)">
+          <td colspan="10">
+            <p><strong>Description:</strong> {{tkt.description}}</p>
+            <p><strong>Comment:</strong> {{tkt.comment}}</p>
+            <p><strong>Sentiment:</strong> {{tkt.sentiment}}</p>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <pagination-controls  id="listing-pagination"
+  (pageChange)="page = ($event)"
+  [maxSize]= "8"
+  [directionLinks]= "true"
+
+  previousLabel="Previous"
+  nextLabel="Next"
+>
+</pagination-controls>
+</div>
+
+<!-- <div class="table-container" #tableContainer>
   
   <cdk-virtual-scroll-viewport itemSize="40" class="table-container" >
   <table class="table">
@@ -53,7 +113,7 @@
     </tbody>
   </table>
 </cdk-virtual-scroll-viewport>
-</div> 
+</div>  -->
 
 
 
