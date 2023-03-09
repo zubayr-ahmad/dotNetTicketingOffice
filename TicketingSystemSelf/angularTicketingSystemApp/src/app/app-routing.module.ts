@@ -5,7 +5,8 @@ import { LoginAuthGuard } from './guards/login/login-auth.guard';
 import { LoginformComponent } from './login-system/loginform/loginform.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'loginForm', pathMatch: 'full' },
+  // { path: '', redirectTo: 'loginForm', pathMatch: 'full' },
+  {path:'',component:LoginformComponent},
   {path:'mainTable',component:MainTableComponent,canActivate:[LoginAuthGuard]},
   {path:'loginForm',component:LoginformComponent},
   {path:'**',component:LoginformComponent}

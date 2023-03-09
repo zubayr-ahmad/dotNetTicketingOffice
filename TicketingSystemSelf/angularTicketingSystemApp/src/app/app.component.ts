@@ -7,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
+  check:boolean=false;
   constructor(){}
   
   ngOnInit(){}
   
-  items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+  checkUserLoggedIn(){
+    if(localStorage.getItem('userLoginStatus') == 'true'){
+    this.check = true
+  }
+  else{
+    this.check = false
+  }
+  return this.check
+  }
 }
