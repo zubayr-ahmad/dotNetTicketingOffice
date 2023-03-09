@@ -7,7 +7,7 @@ import {
   NgForm,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-loginform',
@@ -36,6 +36,8 @@ export class LoginformComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+    // this._loginservice.reloadUser()
+    
   }
 
   // Show password feature
@@ -47,11 +49,29 @@ export class LoginformComponent implements OnInit {
 
   // User varification
   responseFromBackend: any; // Collect response from backend
-  storedResponse: any; // Store response for other function checks
+  storedResponse: any = true; // Store response for other function checks
+
 
   // When data is posted then this will be used to return a response
   getVarification() {
-    return this.storedResponse;
+
+    this._loginservice.isUserLoggedIn.subscribe((result)=>{this.storedResponse = result})
+    if (this._loginservice.invalidUserNamePassword == true && this.storedResponse == true){
+      return true
+    }
+    else{
+      return false
+    }
+  }
+
+  toShow(){
+    this._loginservice.isUserLoggedIn.subscribe((result)=>{this.storedResponse = result})
+    if (this._loginservice.invalidUserNamePassword == false && this.storedResponse == false){
+      return false
+    }
+    else{
+      return true
+    }
   }
 
   // Send data to backend for varification
@@ -63,13 +83,6 @@ export class LoginformComponent implements OnInit {
     };
 
     // Changing routing based on reponse (True / Flase)
-    this._loginservice.postUserData(data).subscribe((response) => {
-      if (response) {
-        this.storedResponse = true;
-        this.router.navigate(['/mainTable']);
-      } else {
-        this.storedResponse = false;
-      }
-    });
+    this._loginservice.postUserData(data)
   }
 }

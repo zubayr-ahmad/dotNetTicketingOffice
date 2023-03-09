@@ -1,20 +1,19 @@
+.table {
+  table-layout: fixed;
+}
 
-table {
-  margin-right: 0%;
-  width: 100%;
-}
 .table-container {
-  height: 100vh;
   width: 100%;
-  overflow-y: scroll;
 }
+
 .displaytable {
   height: 100vh;
   width: 99vw;
 }
 
-
 th {
+  position: sticky;
+  margin-top: 0px;
   background-color: rgb(3, 101, 112);
   text-align: center;
   font-size: 1.1rem;
@@ -27,11 +26,20 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #ffffff;
+}
 
+th.subject {
+  width: 23%;
+  
 }
 
 tr:hover{
   background-color: rgb(180, 206, 214);
+}
+
+#subjectRow{
+  text-align: left;
+  padding-left: 21px;
 }
 
 td {
@@ -76,8 +84,151 @@ td {
   font-weight: bold;
 }
 
+#moreRow {
+  text-align: left;
+  width: 100%;
+}
+
+#moreRow p {
+  text-align: left;
+}
+@media only screen and (max-width: 600px) {
+  th {
+    font-size: 0.9rem;
+  }
+
+  td {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Pagination styling */
+
+/* #listing-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+} */
+#listing-pagination {
+  display: flex;
+  justify-content: center;
+  background-color: #b0baba;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.ng2-pagination > ul > li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.ng2-pagination li > a,
+.ng2-pagination li > span {
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ng2-pagination li.active > a,
+.ng2-pagination li.active > span {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.ng2-pagination li.disabled > a,
+.ng2-pagination li.disabled > span {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 
 
 
-/* Extra */
+
+
+
+
+/* 
+.table {
+  table-layout: fixed;
+}
+
+.table-container {
+  width: 100%;
+  overflow-y: scroll;
+
+  max-width: 100%;
+}
+.displaytable {
+  height: 100vh;
+  width: 99vw;
+}
+
+
+th {
+  background-color: rgb(3, 101, 112);
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d9dbdb;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+
+}
+
+tr:hover{
+  background-color: rgb(180, 206, 214);
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#buttonColor{
+  background-color: rgb(8, 149, 200);
+  color: #fff;
+}
+
+
+.complete {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: rgb(255, 140, 0);
+  font-weight: bold;
+}
+
+.in-progress {
+  color: blue;
+  font-weight: bold;
+}
+
+
+.low {
+  color: rgb(13, 57, 110);
+  font-weight: bold;
+}
+
+.normal {
+  color: green;
+  font-weight: bold;
+}
+
+.high {
+  color: red;
+  font-weight: bold;
+} */
