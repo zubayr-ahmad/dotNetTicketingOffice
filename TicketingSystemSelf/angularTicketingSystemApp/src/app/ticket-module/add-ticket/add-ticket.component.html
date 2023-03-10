@@ -1,0 +1,12 @@
+<p>add-ticket works!</p>
+<form [formGroup]="ticketForm" (ngSubmit)="postData(ticketForm)" class="login-form mt-3">
+
+    <!-- Input Email -->
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input formControlName="email" type="email" id="email" class="form-control" placeholder="Enter email" />
+    </div>
+
+  <input type="submit" value="Post">
+
+</form>
