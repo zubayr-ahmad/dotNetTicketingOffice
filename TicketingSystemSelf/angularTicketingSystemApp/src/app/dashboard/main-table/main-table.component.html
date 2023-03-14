@@ -36,16 +36,17 @@
           <td>{{tkt.dueDate | date}}</td>
           <td>{{tkt.updatedDate | date}}</td>
           <td>{{tkt.taskId}}</td>
-          <td><button id="buttonColor" mat-raised-button type="button" class="btn " >{{ isRowExpanded(i) ? 'Hide' : 'More' }}</button></td>
+          <!-- <td><button id="buttonColor" mat-raised-button type="button" class="btn " >{{ isRowExpanded(i) ? 'Hide' : 'More' }}</button></td> -->
+          <td><button id="buttonColor" mat-raised-button type="button" class="btn" (click)="showTicketDetails(i)">More</button></td>
           
         </tr>
-        <tr id='moreRow' *ngIf="isRowExpanded(i)">
+        <!-- <tr id='moreRow' *ngIf="isRowExpanded(i)">
           <td colspan="10">
             <p><strong>Description:</strong> {{tkt.description}}</p>
             <p><strong>Comment:</strong> {{tkt.comment}}</p>
             <p><strong>Sentiment:</strong> {{tkt.sentiment}}</p>
           </td>
-        </tr>
+        </tr> -->
       </ng-container>
     </tbody>
   </table>
@@ -60,6 +61,7 @@
 </pagination-controls>
 <button (click)="movetoAddTicket()">Want to create a ticket?</button>
 </div>
+
 
 
 

@@ -1,0 +1,14 @@
+.ticket-container {
+    margin-top: 20px;
+  }
+  
+  .ticket-subject {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .ticket-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  

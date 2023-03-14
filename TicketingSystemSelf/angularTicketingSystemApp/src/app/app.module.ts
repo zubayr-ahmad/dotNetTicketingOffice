@@ -11,15 +11,8 @@ import { TicketModuleModule } from './ticket-module/ticket-module.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -27,11 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginSystemModule,
     DashboardModule,
     BrowserAnimationsModule,
-    TicketModuleModule
-
-
+    TicketModuleModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

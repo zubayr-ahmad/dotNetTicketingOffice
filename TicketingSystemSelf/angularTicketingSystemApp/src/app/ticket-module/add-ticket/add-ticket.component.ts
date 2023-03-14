@@ -51,6 +51,7 @@ export class AddTicketComponent implements OnInit{
   onSubmit() {
     console.log(this.addticketForm.value);
     this.router.navigate(['/mainTable'])
+    alert('Ticket Added Successfully')
   }
 
   onItemSelect($event:any){
