@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { LoginSystemModule } from './login-system/login-system.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-
+import { TicketModuleModule } from './ticket-module/ticket-module.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginSystemModule,
     DashboardModule,
     BrowserAnimationsModule,
+    TicketModuleModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

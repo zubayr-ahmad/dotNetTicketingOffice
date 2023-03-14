@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Add Ticket</h2>
+  <form [formGroup]="addticketForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <textarea type="text" class="form-control" id="subject" formControlName="subject"></textarea>
+      
+    </div>
+    <div class="form-group">
+      <label for="subject">Description</label>
+      <textarea type="text" class="form-control" id="description" formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <select class="form-control" id="priority" formControlName="priority">
+        <option value="low">Low</option>
+        <option value="normal">Normal</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="date" class="form-control" id="startDate" formControlName="startDate">
+    </div>
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input type="date" class="form-control" id="dueDate" formControlName="dueDate">
+    </div>
+    <div class="form-group">
+      <label for="assignees">Assignees</label>
+      <ng-multiselect-dropdown formControlName="assigneesSelected"
+      [placeholder]="'Select Assignees for Ticket'"
+      [settings]="dropdownSettings"
+      [data]="dropdownList"
+      [(ngModel)]="selectedItems"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)"
+      >
+
+      </ng-multiselect-dropdown>
+      
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div>

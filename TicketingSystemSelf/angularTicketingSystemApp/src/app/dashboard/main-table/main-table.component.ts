@@ -1,4 +1,6 @@
+import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MaintableService } from 'src/app/services/dashboard/maintable.service';
 
 
@@ -16,15 +18,16 @@ export class MainTableComponent {
   page:Number | any = 1;
 
 
-  constructor(private _maintableservice: MaintableService) {
+  constructor(private _maintableservice: MaintableService, private router:Router) {
+    // let param01 = new HttpParams().set('page',4)
     this._maintableservice.getTickets().subscribe((response: any) => {
       this.allTickets = response;
       this.totalRecords = this.allTickets.length
 
 
       // Following Code is for testing pagination
-      // this.allTickets = response.results;
-      // console.log(response)
+      this.allTickets = response;
+      console.log(response)
     });
   }
 
@@ -44,5 +47,8 @@ export class MainTableComponent {
 
   isRowExpanded(index: number) {
     return this.expandedRows.includes(index);
+  }
+  movetoAddTicket(){
+    this.router.navigate(['/addTicket'])
   }
 }
