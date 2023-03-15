@@ -6,17 +6,22 @@ import { TicketDataService } from 'src/app/services/ticket-data.service';
   styleUrls: ['./ticket-details.component.css']
 })
 export class TicketDetailsComponent implements OnInit {
-  @Input() myTicket:any
+  myTicket:any
   data=23094;
   ngOnInit():void {
     // this.myTicket = this._ticketDataService.ticket
-    // this.myTicket = localStorage.getItem('currentTicket')
-    console.log('Init working',localStorage.getItem('currentTicket'))
+    let tmp = localStorage.getItem('currentTicket')
+    if ( tmp !== null) {
+      this.myTicket = JSON.parse(tmp);
+      
+    }
+    console.log('Type of ticket is:',typeof this.myTicket)
+    console.log('Init working',this.myTicket)
   }
 
   constructor(private _ticketDataService:TicketDataService) {
     // this.myTicket = this._ticketDataService.ticket
-    console.log('COmponent loaded', this._ticketDataService.ticket)
+    console.log('Details Component loaded', this._ticketDataService.ticket)
    }
 
 

@@ -26,14 +26,14 @@ export class MainTableComponent {
     private renderer: Renderer2
   ) {
     // let param01 = new HttpParams().set('page',4)
-    this._maintableservice.getTickets().subscribe((response: any) => {
+    this._maintableservice.getTickets(5).subscribe((response: any) => {
       this.allTickets = response;
-      this.totalRecords = this.allTickets.length;
+      this.totalRecords = response.length;
       
-      // localStorage.setItem('tickets',this.allTickets)
+
 
       // Following Code is for testing pagination
-      console.log(response);
+      console.log(response.Tickets);
     });
   }
 
@@ -60,7 +60,7 @@ export class MainTableComponent {
     this._ticketDataService.ticket = this.allTickets[index];
     console.log(this._ticketDataService.ticket);
     this.currentTicket = this._ticketDataService.ticket
-    localStorage.setItem('currentTicket',JSON.stringify(this.allTickets[index]))
+    localStorage.setItem('currentTicket',JSON.stringify(this.currentTicket))
     this.router.navigate(['/ticketDetails'])
     // const url = '/ticketDetails';
     // const title = 'Ticket Details';

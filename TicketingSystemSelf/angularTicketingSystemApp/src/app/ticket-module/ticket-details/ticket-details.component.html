@@ -1,8 +1,57 @@
-<p>ticket details works</p>
-<div class="ticket-container">
-    
-    <h1 class="ticket-subject">{{myTicket.ticketSubject}}</h1>
-    <p class="ticket-description">{{myTicket.description}}</p>
+<div class="ticket-details">
+  <div class="ticket-details__header">
+    <h2 class="ticket-details__subject">{{myTicket.ticketSubject}}</h2>
+    <p class="ticket-details__description">{{myTicket.description}}</p>
   </div>
-
-
+  <div class="ticket-details__details">
+    <div class="ticket-details__date-box">
+      <div class="ticket-details__date-label">Created Date</div>
+      <div class="ticket-details__date-value">{{myTicket.dateCreated | date}}</div>
+    </div>
+    <div class="ticket-details__date-box">
+      <div class="ticket-details__date-label">Start Date</div>
+      <div class="ticket-details__date-value">{{myTicket.dateStarted | date}}</div>
+    </div>
+    <div class="ticket-details__date-box">
+      <div class="ticket-details__date-label">Due Date</div>
+      <div class="ticket-details__date-value">{{myTicket.dueDate}} | date</div>
+    </div>
+    <div class="ticket-details__comments">
+      <h3 class="ticket-details__comments-heading">Comments</h3>
+      <div class="ticket-details__comments-box">
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">{{myTicket.comment}}</p>
+          <p class="ticket-details__comment-info">By id:{{myTicket.assignyId}} on 01/01/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/02/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/03/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/03/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/03/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/03/2022</p>
+        </div>
+        <div class="ticket-details__comment">
+          <p class="ticket-details__comment-text">Assignee comment goes here.</p>
+          <p class="ticket-details__comment-info">By Assignee on 01/03/2022</p>
+        </div>
+      </div>
+      <div class="ticket-details__comment-add">
+        <textarea class="ticket-details__comment-textarea" placeholder="Add a comment"></textarea>
+        <button class="ticket-details__comment-button">Add Comment</button>
+      </div>
+    </div>
+  </div>
+</div>

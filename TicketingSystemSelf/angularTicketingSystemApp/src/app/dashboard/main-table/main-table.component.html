@@ -1,3 +1,5 @@
+
+
 <div class="table-container" #tableContainer>
  
   <table class="table">
@@ -60,6 +62,10 @@
 >
 </pagination-controls>
 <button (click)="movetoAddTicket()">Want to create a ticket?</button>
+</div>
+
+<div>
+  <p>{{allTickets | json}}</p>
 </div>
 
 
