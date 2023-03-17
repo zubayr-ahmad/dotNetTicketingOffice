@@ -9,13 +9,23 @@ export class MaintableService {
   constructor(private http:HttpClient) { }
   // getTicketsURL = 'http://localhost:3000/api/tickets' // URL for local json server
   // getTicketsURL ='https://localhost:7274/RetrievingDataFromTicketTable'
-  getTicketsURL ='http://localhost:8083/LatestAPI/RetrievingDataFromTicketTable'  // actual api
+  // getTicketsURL ='http://localhost:8083/LatestAPI/RetrievingDataFromTicketTable'  // actual api
   // getTicketsURL = 'https://jsonplaceholder.typicode.com/posts/1/comments'
   // getTicketsURL ='https://randomuser.me/api/?results=50'
+  getTicketsURL ='https://jsonplaceholder.typicode.com/photos'
   
+
   getTickets(page01:any){
     return this.http.get(this.getTicketsURL,{
-      params:{page:page01}
+      params:{albumId:page01}
+
     })
   }
+
+  // Actual call
+  // getTickets(page01:any){
+  //   return this.http.get(this.getTicketsURL,{
+  //     params:{page:page01}
+  //   })
+  // }
 }

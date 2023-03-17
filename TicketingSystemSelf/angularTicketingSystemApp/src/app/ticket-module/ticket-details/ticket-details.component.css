@@ -193,3 +193,15 @@
 .comment-info span {
   font-weight: bold;
 }
+
+.ticket-details__comment--negative {
+  /* background-color: #ef00004d; */
+  background: linear-gradient(to left, #ff00003d, #ffff0012);
+}
+
+.ticket-details__comment--positive {
+  background-color: #05ff056e;
+}
+.ticket-details__comment--neutral {
+  background-color: #7af57a6e;
+}

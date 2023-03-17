@@ -33,7 +33,7 @@ namespace TicketingSystemSelf.Controllers
         [HttpGet("RetrievingDataFromTicketTable")]
         // [Route("{page}")]
         // public async Task<ActionResult<Std>> GetResult() // if we use this statement we will also see the model of the database in swagger
-        public async Task<IActionResult> GetResult(int page) //Iaction means we are performing some action and returning some status code
+        public async Task<IActionResult> GetResult([FromQuery] int page) //Iaction means we are performing some action and returning some status code
         {
             if (_context.Tickets == null)
                 return NotFound();  // will return not found if item is not present
