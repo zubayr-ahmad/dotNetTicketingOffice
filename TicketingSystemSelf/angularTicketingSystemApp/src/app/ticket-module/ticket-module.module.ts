@@ -4,9 +4,11 @@ import { AddTicketComponent } from './add-ticket/add-ticket.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 @NgModule({
   declarations: [
     AddTicketComponent,
+    TicketDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     NgMultiSelectDropDownModule.forRoot()
   ],
   exports:[
-    AddTicketComponent
+    AddTicketComponent,
+    TicketDetailsComponent
   ]
 })
 export class TicketModuleModule { }
