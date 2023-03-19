@@ -4,7 +4,15 @@
 
 <div class="ticket-details">
   <div class="ticket-details__header">
-    <h2 class="ticket-details__subject">{{myTicket02.subject}}</h2>
+    <h2 >Subject: {{myTicket02.subject}}</h2>
+    <div>
+      <p [ngClass]="{
+        'complete': myTicket02.status === 1,
+        'pending': myTicket02.status === 2,
+        'in-progress': myTicket02.status === 3
+      }">Status: {{myTicket02.status === 1 ? 'Complete' : myTicket02.status === 2 ? 'Pending' : 'In Progress'}}</p>
+    </div>
+    <h2>Description</h2>
     <p class="ticket-details__description">{{myTicket02.description}}</p>
   </div>
   <div class="ticket-details__details">
@@ -18,7 +26,7 @@
     </div>
     <div class="ticket-details__date-box">
       <div class="ticket-details__date-label">Due Date</div>
-      <div class="ticket-details__date-value">{{myTicket02.dueDate}} | date </div>
+      <div class="ticket-details__date-value">{{myTicket02.dueDate | date}} </div>
     </div>
     <div class="ticket-details__comments">
       <h3 class="ticket-details__comments-heading">Comments</h3>
@@ -28,8 +36,11 @@
           'ticket-details__comment--neutral': c.sentiment === 0,
           'ticket-details__comment--negative': c.sentiment === -1,
           'ticket-details__comment--positive': c.sentiment === 1
-        }" *ngFor="let c of myTicket02.comments">
-          <p class="ticket-details__comment-text">{{c.text}} &#128512;</p>
+        }" *ngFor="let c of allComments">
+          <p class="ticket-details__comment-text">{{c.text}}</p>
+          <img *ngIf='c.sentiment === 0' src="../../../assets/Emojis/image01.png" alt="" class="sentimentEmoji">
+          <img *ngIf='c.sentiment === 1' src="../../../assets/Emojis/image07.png" alt="" class="sentimentEmoji">
+          <img *ngIf='c.sentiment === -1' src="../../../assets/Emojis/image06.png" alt="" class="sentimentEmoji">
           
           <p class="ticket-details__comment-info">By {{c.assignee.name}} on 01/01/2022</p>
       </div>
@@ -40,8 +51,8 @@
         </div>
       </div>
       <div class="ticket-details__comment-add">
-        <textarea class="ticket-details__comment-textarea" placeholder="Add a comment"></textarea>
-        <button class="ticket-details__comment-button">Add Comment</button>
+        <textarea class="ticket-details__comment-textarea" placeholder="Add a comment" [(ngModel)]="commentvalue"></textarea>
+        <button class="ticket-details__comment-button" (click)="addComment(commentvalue)">Add Comment</button>
       </div>
     </div>
   </div>

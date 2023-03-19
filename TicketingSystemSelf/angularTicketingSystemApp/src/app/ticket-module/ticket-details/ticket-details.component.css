@@ -19,6 +19,7 @@
 }
 
 .ticket-details__subject {
+  display: inline-block;
   font-size: 20px;
   font-weight: bold;
   margin: 0;
@@ -68,9 +69,7 @@
   justify-content: flex-start;
   margin-top: 20px;
   background-color: #f5f5f5;
-  
 }
-
 
 .ticket-details__comments-heading {
   font-size: 16px;
@@ -87,7 +86,6 @@
   border-radius: 5px;
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px #ccc;
-
 }
 
 .ticket-details__comment {
@@ -99,6 +97,7 @@
 }
 
 .ticket-details__comment-text {
+  display: inline-block;
   padding: 8px;
   margin: 0;
   font-size: large;
@@ -130,7 +129,7 @@
 .ticket-details__comment-button {
   align-self: flex-end;
   padding: 5px 10px;
-  background-color: #008CBA;
+  background-color: #008cba;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -138,7 +137,7 @@
 }
 
 .ticket-details__comment-button:hover {
-  background-color: #00688B;
+  background-color: #00688b;
 }
 
 .comment-box {
@@ -200,8 +199,36 @@
 }
 
 .ticket-details__comment--positive {
-  background-color: #05ff056e;
+  background: linear-gradient(to left, #00ff3257, #ffff0012);
 }
 .ticket-details__comment--neutral {
-  background-color: #7af57a6e;
+  background: linear-gradient(to left, #48ff001c, #ffff0012);
+}
+
+.sentimentEmoji {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.complete {
+  width: calc(33.33% - 10px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px #ccc;
+  color: green;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.pending {
+  color: rgb(255, 140, 0);
+  font-weight: bold;
+}
+
+.in-progress {
+  color: blue;
+  font-weight: bold;
 }

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AddTicketComponent implements OnInit{
   addticketForm: any;
+  
   assigneeList = [
     { id: 1, name: 'John' },
     { id: 2, name: 'Mary' },
@@ -49,8 +50,23 @@ export class AddTicketComponent implements OnInit{
   }
 
   onSubmit() {
-    console.log(this.addticketForm.value);
-    this.router.navigate(['/mainTable'])
+    let submitTicket = this.addticketForm.value
+    if (submitTicket.priority=='normal'){
+      submitTicket.priority=2
+    }
+    
+    else if(submitTicket.priority=='high'){
+      submitTicket.priority=3
+    }
+    
+    else if(submitTicket.priority=='low'){
+      submitTicket.priority=1
+    }
+    
+    // Here we call the add ticket api.
+    console.log(submitTicket);
+
+    // this.router.navigate(['/mainTable'])
     alert('Ticket Added Successfully')
   }
 

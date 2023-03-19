@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MaintableService } from 'src/app/services/dashboard/maintable.service';
 
 import { PaginationInstance } from 'ngx-pagination'; 
-import { TicketDataService } from 'src/app/services/ticket-data.service';
+import { TicketDataService } from 'src/app/services/ticket/ticket-data.service';
 
 @Component({
   selector: 'app-main-table',

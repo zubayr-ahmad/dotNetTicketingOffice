@@ -18,8 +18,8 @@ export class MaintableService {
   getTickets(page01:any){
     return this.http.get(this.getTicketsURL,{
       params:{albumId:page01}
-
     })
+
   }
 
   // Actual call

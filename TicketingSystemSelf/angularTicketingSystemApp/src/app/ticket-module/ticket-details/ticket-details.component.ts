@@ -1,5 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TicketDataService } from 'src/app/services/ticket-data.service';
+import { TicketDataService } from 'src/app/services/ticket/ticket-data.service';
+interface CommentResponse {
+  sentiment: number;
+  userId:number;
+  comment:string;
+  ticketId:number;
+  // Other properties in the response object, if any
+}
 @Component({
   selector: 'app-ticket-details',
   templateUrl: './ticket-details.component.html',
@@ -8,8 +15,9 @@ import { TicketDataService } from 'src/app/services/ticket-data.service';
 export class TicketDetailsComponent implements OnInit {
   myTicket: any;
   myTicket02: any = {
-    id: 1,
+    id: 979,
     subject: 'Testing Ticket',
+    status:1,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime omnis quae accusantium nesciunt eos ab reiciendis. Dolor magnam assumenda, aliquam ex libero voluptatum, laudantium iure eum adipisci, accusantium nemo saepe?',
     taskId: '#12h34e',
@@ -80,11 +88,16 @@ export class TicketDetailsComponent implements OnInit {
     ]),
   };
   data = 23094;
+  allComments:any;
   ngOnInit(): void {
     // this.myTicket = this._ticketDataService.ticket
     let tmp = localStorage.getItem('currentTicket');
     if (tmp !== null) {
       this.myTicket = JSON.parse(tmp);
+
+      this.allComments = this.myTicket02.comments
+
+
     }
     console.log('Type of ticket is:', typeof this.myTicket);
     console.log('Init working', this.myTicket);
@@ -94,6 +107,23 @@ export class TicketDetailsComponent implements OnInit {
     // this.myTicket = this._ticketDataService.ticket
     console.log('Details Component loaded', this._ticketDataService.ticket);
   }
+  
+  commentvalue:string='';
+  commentObj:any={
+    "userId": 1034,
+    "ticketId": this.myTicket02.id,
+    "comment": ''}
+  addComment(val:string){
+    if (val!=''){
+      this.commentObj.comment = val
+      this._ticketDataService.addComment(this.commentObj).subscribe((response:any)=>{
 
-  close() { }
+        console.log('response is:',response)
+
+        let tmpComment ={text:val,sentiment:parseInt(response.sentiment),assignee:{name:'me'}}
+        this.allComments.push(tmpComment)
+      })
+    
+    }
+  }
 }

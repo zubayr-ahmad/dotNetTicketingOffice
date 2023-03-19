@@ -67,6 +67,6 @@ if __name__ == "__main__":
     # updateData("[User]", "Ticket_Id", 980, "User_Id", 1035)
     # updateData("[Ticket]", "Comment", "Null", "Id_Ticket", 979)
     # deleteAllData("[Comments]")
-    getTableData("Comments", True)
-    # getTableData("User", True)
+    # getTableData("Comments", True)
+    getTableData("User", True)
     # getTableData("Ticket", True)

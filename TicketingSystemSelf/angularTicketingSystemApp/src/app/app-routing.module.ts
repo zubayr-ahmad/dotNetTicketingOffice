@@ -12,8 +12,8 @@ const routes: Routes = [
   {path:'mainTable',component:MainTableComponent,canActivate:[LoginAuthGuard]},
   // {path:'mainTable',component:MainTableComponent},
   {path:'loginForm',component:LoginformComponent},
-  {path:'addTicket',component:AddTicketComponent},
-  {path:'ticketDetails',component:TicketDetailsComponent},
+  {path:'addTicket',component:AddTicketComponent,canActivate:[LoginAuthGuard]},
+  {path:'ticketDetails',component:TicketDetailsComponent,canActivate:[LoginAuthGuard]},
   {path:'**',component:LoginformComponent}
 ];
 
