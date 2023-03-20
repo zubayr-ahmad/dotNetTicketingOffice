@@ -42,7 +42,7 @@
           <img *ngIf='c.sentiment === 1' src="../../../assets/Emojis/image07.png" alt="" class="sentimentEmoji">
           <img *ngIf='c.sentiment === -1' src="../../../assets/Emojis/image06.png" alt="" class="sentimentEmoji">
           
-          <p class="ticket-details__comment-info">By {{c.assignee.name}} on 01/01/2022</p>
+          <p class="ticket-details__comment-info">By {{c.assignee.name}} on {{today | date}}</p>
       </div>
         
       <div class="ticket-details__comment">

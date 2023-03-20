@@ -12,7 +12,7 @@ urlcomment:any='http://127.0.0.1:8000/sentiment';
    }
 
   getTicketDetails(id:number){
-
+    
   }
 
   addComment(obj:any){

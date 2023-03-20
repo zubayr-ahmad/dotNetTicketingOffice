@@ -89,6 +89,7 @@ export class TicketDetailsComponent implements OnInit {
   };
   data = 23094;
   allComments:any;
+  today = new Date();
   ngOnInit(): void {
     // this.myTicket = this._ticketDataService.ticket
     let tmp = localStorage.getItem('currentTicket');
