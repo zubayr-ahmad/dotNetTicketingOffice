@@ -52,7 +52,7 @@ export class LoginformComponent implements OnInit {
   storedResponse: any = true; // Store response for other function checks
 
 
-  // When data is posted then this will be used to return a response
+  // When data is posted then this will be used to return a response (Extra code)
   getVarification() {
 
     this._loginservice.isUserLoggedIn.subscribe((result)=>{this.storedResponse = result})
@@ -64,6 +64,8 @@ export class LoginformComponent implements OnInit {
     }
   }
 
+
+  // to show invalid username or password text
   toShow(){
     this._loginservice.isUserLoggedIn.subscribe((result)=>{this.storedResponse = result})
     if (this._loginservice.invalidUserNamePassword == false && this.storedResponse == false){
@@ -81,7 +83,7 @@ export class LoginformComponent implements OnInit {
       Email: this.loginForm.get('email')?.value,
       Password: this.loginForm.get('password')?.value,
     };
-
+    
     // Changing routing based on reponse (True / Flase)
     this._loginservice.postUserData(data)
   }

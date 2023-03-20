@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AddTicketService } from 'src/app/services/ticket/add-ticket.service';
 
 @Component({
   selector: 'app-add-ticket',
@@ -21,7 +22,7 @@ export class AddTicketComponent implements OnInit{
   selectedItems = [];
   dropdownSettings = {};
 
-  constructor(private formBuilder: FormBuilder, private router:Router) {
+  constructor(private formBuilder: FormBuilder, private router:Router, private _addTicketService:AddTicketService) {
         this.addticketForm = this.formBuilder.group({
       subject: ['', Validators.required],
       description:[''],
@@ -49,6 +50,18 @@ export class AddTicketComponent implements OnInit{
     return this.assigneeList
   }
 
+
+  
+  // This code is for selecting assignees for the
+  onItemSelect($event:any){
+    console.log('$event is ',$event)
+  }
+
+  onSelectAll(items: any) {
+    console.log(items);
+  }
+
+  // Following is the code for sending ticket to the backend 
   onSubmit() {
     let submitTicket = this.addticketForm.value
     if (submitTicket.priority=='normal'){
@@ -64,19 +77,16 @@ export class AddTicketComponent implements OnInit{
     }
     
     // Here we call the add ticket api.
-    console.log(submitTicket);
+    this._addTicketService.addTickettoDataBase(submitTicket).subscribe((result)=>{
+      console.log('response from addTicketAPI',result)
+      if (result){
+        alert('Ticket Added Successfully')
+        // this.router.navigate(['/mainTable'])
+      }
 
-    // this.router.navigate(['/mainTable'])
-    alert('Ticket Added Successfully')
+    })
+    console.log('Submitted ticket',submitTicket);
+    
   }
-
-  onItemSelect($event:any){
-    console.log('$event is ',$event)
-  }
-
-  onSelectAll(items: any) {
-    console.log(items);
-  }
-
 
 }

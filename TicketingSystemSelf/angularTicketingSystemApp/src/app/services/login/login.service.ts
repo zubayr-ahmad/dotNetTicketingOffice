@@ -24,7 +24,8 @@ export class LoginService {
         if (result.body == true){
         this.isUserLoggedIn.next(true);
         this.invalidUserNamePassword = true
-        localStorage.setItem('userLoginStatus',JSON.stringify(result.body))        
+        localStorage.setItem('userLoginStatus',JSON.stringify(result.body))  
+        localStorage.setItem('userEmail',userData.Email)      
         this.router.navigate(['/mainTable']);}
         else{
           this.isUserLoggedIn.next(false);

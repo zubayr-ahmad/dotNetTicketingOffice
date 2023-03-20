@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class AddTicketService {
 
-  constructor() { }
+  url = 'https://jsonplaceholder.typicode.com/posts'
+  constructor(private http:HttpClient) {  }
+
+  addTickettoDataBase(obj:any){
+    return this.http.post(this.url,obj)
+  }
 }
